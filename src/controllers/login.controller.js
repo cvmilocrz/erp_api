@@ -1,9 +1,11 @@
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 import { getConnection } from "../database/connection.js";
-import { userQueries } from "../database/queries.interface.js";
-/* TODO: implementar un usuario en la tabla de usuarios */
+import { queries } from "../database/queries.interface.js"; // Asegúrate de que esta ruta sea correcta
+import { API_KEY } from "../config.js"; // Asegúrate de que esta ruta sea correcta y que `API_KEY` esté definido
+
 export const login = async (req, res) => {
-  const { user, password } = req.body;
+  const { email, password } = req.body; // Cambiado `user` a `email`
 
   if (!email || !password) {
     return res.status(400).json({
@@ -13,7 +15,7 @@ export const login = async (req, res) => {
 
   try {
     const client = await getConnection();
-    const result = await client.query(userQueries.getUsersByEmail, [email]);
+    const result = await client.query(queries.users.getUsersByEmail, [email]); // Cambiado `userQueries` a `queries`
     await client.end();
     if (result.rows.length > 0) {
       const user = result.rows[0];

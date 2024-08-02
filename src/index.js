@@ -7,10 +7,11 @@ import { PORT } from './config/config.js'
 const app = express();
 
 //importación de las rutas
-import userRoutes from '../src/routes/users.routes.js'
-import menuRoutes from '../src/routes/menu.routes.js'
-import employeesRoutes from '../src/routes/employees.routes.js'
-import fileRoutes from '../src/routes/files.routes.js'
+import userRoutes from './routes/users.routes.js'
+import menuRoutes from './routes/menu.routes.js'
+import employeesRoutes from './routes/employees.routes.js'
+import fileRoutes from './routes/files.routes.js'
+
 
 //Middleware
 app.use(morgan('dev'));
@@ -24,6 +25,7 @@ app.use(userRoutes);
 app.use(menuRoutes);
 app.use(employeesRoutes);
 app.use(fileRoutes);
+
 
 //configuración del servidor
 app.get('/', (req, res) => {

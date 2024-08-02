@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "nodemon src/index.js --exec babel-node",
     "build": "babel src -d dist",
-    "start": "node dist"
+    "start": "node dist",
+    "migration":"node src/migration/migrate.js"
   },
   "author": "Net Alcorrect",
   "license": "ISC",

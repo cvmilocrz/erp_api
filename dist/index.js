@@ -8,6 +8,7 @@ var _config = require("./config/config.js");
 var _usersRoutes = _interopRequireDefault(require("../src/routes/users.routes.js"));
 var _menuRoutes = _interopRequireDefault(require("../src/routes/menu.routes.js"));
 var _employeesRoutes = _interopRequireDefault(require("../src/routes/employees.routes.js"));
+var _filesRoutes = _interopRequireDefault(require("../src/routes/files.routes.js"));
 //Configuración del servidor
 var app = (0, _express["default"])();
 
@@ -25,6 +26,7 @@ app.use((0, _cors["default"])());
 app.use(_usersRoutes["default"]);
 app.use(_menuRoutes["default"]);
 app.use(_employeesRoutes["default"]);
+app.use(_filesRoutes["default"]);
 
 //configuración del servidor
 app.get('/', function (req, res) {

@@ -22,7 +22,7 @@ var getUsers = exports.getUsers = /*#__PURE__*/function () {
         case 3:
           client = _context.sent;
           _context.next = 6;
-          return client.query(_queriesInterface.userQueries.getUsers);
+          return client.query(_queriesInterface.queries.users.getUsers);
         case 6:
           result = _context.sent;
           res.status(200).json(result.rows);
@@ -69,7 +69,7 @@ var getUsersById = exports.getUsersById = /*#__PURE__*/function () {
         case 6:
           client = _context2.sent;
           _context2.next = 9;
-          return client.query(_queriesInterface.userQueries.getUsersById, [id]);
+          return client.query(_queriesInterface.queries.users.getUsersById, [id]);
         case 9:
           result = _context2.sent;
           _context2.next = 12;
@@ -129,7 +129,7 @@ var createUsers = exports.createUsers = /*#__PURE__*/function () {
         case 9:
           client = _context3.sent;
           _context3.next = 12;
-          return client.query(_queriesInterface.userQueries.createUsers, [name, cargo, email, phone, departament, rol, permissions, user_status, hashedPassword]);
+          return client.query(_queriesInterface.queries.users.createUsers, [name, cargo, email, phone, departament, rol, permissions, user_status, hashedPassword]);
         case 12:
           _context3.next = 14;
           return client.end();
@@ -180,7 +180,7 @@ var updateUsers = exports.updateUsers = /*#__PURE__*/function () {
         case 10:
           client = _context4.sent;
           _context4.next = 13;
-          return client.query(_queriesInterface.userQueries.updateUsers, [name, cargo, email, phone, departament, rol, permissions, user_status, hashedPassword, id]);
+          return client.query(_queriesInterface.queries.users.updateUsers, [name, cargo, email, phone, departament, rol, permissions, user_status, hashedPassword, id]);
         case 13:
           _context4.next = 15;
           return client.end();
@@ -226,7 +226,7 @@ var deleteUsers = exports.deleteUsers = /*#__PURE__*/function () {
         case 6:
           client = _context5.sent;
           _context5.next = 9;
-          return client.query(_queriesInterface.userQueries.deleteUsers, [id]);
+          return client.query(_queriesInterface.queries.users.deleteUsers, [id]);
         case 9:
           _context5.next = 11;
           return client.end();
