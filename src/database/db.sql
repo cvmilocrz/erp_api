@@ -144,3 +144,4 @@ CREATE TABLE coporate_curriculum (
     validated_status INTEGER NOT NULL CHECK (validated_status IN (1, 0)),
     employee_id UUID REFERENCES employees(id)
 );
+CREATE TABLE
